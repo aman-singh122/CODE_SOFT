@@ -194,26 +194,29 @@
     </footer>
 
     <script>
-        document.getElementById('verification-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevents form submission and page reload
-            const codeInput = document.getElementById('certificate-code');
-            const errorMessage = document.getElementById('error-message');
-            const correctCode = '9d5603p'; // The specific code for the redirect
+        
+document.getElementById('verification-form').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-            // Check if the input value (trimmed to remove spaces) matches the correct code
-            if (codeInput.value.trim() === correctCode) {
-                // Redirect to last.html
-                window.location.href = 'last.html';
-            } else {
-                // Show error message for any other code
-                errorMessage.style.display = 'block';
-                // Optional: Hide error message after 3 seconds
-                setTimeout(() => {
-                    errorMessage.style.display = 'none';
-                }, 3000);
-            }
-        });
-    </script>
+    const codeInput = document.getElementById('certificate-code');
+    const errorMessage = document.getElementById('error-message');
+    const code = codeInput.value.trim();
+
+    // Certificate code checks
+    if (code === '9d5603p') {
+        window.location.href = 'last.html'; // Aman Kumar’s certificate
+    } 
+   
+    else {
+        errorMessage.style.display = 'block';
+        setTimeout(() => {
+            errorMessage.style.display = 'none';
+        }, 3000);
+    }
+});
+</script>
+
+   
 
 </body>
 </html>
